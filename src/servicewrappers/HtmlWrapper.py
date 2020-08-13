@@ -31,16 +31,25 @@ class HtmlWrapper:
 
             if (None != player[1]):
                 unformattedSalary = player[1].text_content()
-                salary = currencyToInteger(unformattedSalary)
+                salary = self.currencyToInteger(unformattedSalary)
             if (None != player[2]):
                 year = player[2].text_content()
 
             if (None != player[3]):
                 league = player[3].text_content()
+            try:
+                salaryAsInt = int(salary)
+                newplayer = PlayerRecord(name, salaryAsInt, year, player)
+                if newplayer.isValid():
+                    translatedRecords.append(newplayer)
+                else:
+                    print("invalid player record")
+            except:
+                print("Invalid Salary")
 
-            newplayer = PlayerRecord(name, salary, year, player)
-            print(newplayer)
-            translatedRecords.append(newplayer)
+           # print(newplayer)
+
+
 
         print(len(translatedRecords))
         return translatedRecords

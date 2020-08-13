@@ -5,10 +5,11 @@ from src.controller.QualifyingOfferController import QualifyingOfferController
 from src.data.PlayerRecord import PlayerRecord
 from src.servicewrappers.HtmlWrapper import HtmlWrapper
 
+
 class QualifyingOfferControllerTest(unittest.TestCase):
     def test_GivenValidData_WhenDetermineQualifyingOffer_ThenReturnValidIntegerAverage(self):
         #setup preconditions
-        expectedOfferValue = 7624682
+        expectedOfferValue = '$7,624,682'
         validPlayerRecord =[]
         for index in range(25):
             validPlayerRecord.append(PlayerRecord("Fee,Craig", "123414", "2016", "MLB"))
