@@ -7,3 +7,16 @@ class PlayerRecord:
 
     def __str__(self):
         return "Name: "+self.playerName+" Salary: "+self.salary
+
+    def isValid(self):
+        if self.playerName is None:
+            return False
+        if self.salary is None:
+            return False
+        if self.year is None:
+            return False
+        if self.league is None:
+            return False
+        return True
+
+
