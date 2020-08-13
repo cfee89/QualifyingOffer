@@ -6,7 +6,7 @@ class PlayerRecord:
         self.league = inLeague
 
     def __str__(self):
-        return "Name: "+self.playerName+" Salary: "+self.salary
+        return "Name: " + self.playerName + " Salary: " + str(self.salary)
 
     def isValid(self):
         if self.playerName is None:

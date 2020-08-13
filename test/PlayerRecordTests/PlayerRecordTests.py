@@ -24,7 +24,7 @@ class PlayerRecordTests(unittest.TestCase):
 
     def test_GivenLeagueIsNone_ThenReturnFalse(self):
         expected = False
-        classUnderTest = PlayerRecord("Fee,Craig", "2345234", "2016", "")
+        classUnderTest = PlayerRecord("Fee,Craig", "2345234", "2016", None)
         actual = classUnderTest.isValid()
         self.assertEqual(expected, actual)
 
