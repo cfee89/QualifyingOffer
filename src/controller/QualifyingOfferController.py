@@ -8,8 +8,10 @@ class QualifyingOfferController:
         self.cleanData()
         for i in self.records:
             print(i)
+        #REFERENCE https://stackoverflow.com/questions/403421/how-to-sort-a-list-of-objects-based-on-an-attribute-of-the-objects
         self.records.sort(key=lambda record: record.salary, reverse=True)
         offerValue = self.averageTop125Salaries()
+        #REFERENCE https://www.kite.com/python/answers/how-to-format-currency-in-python
         offerValueAsCurrency = "${:,}".format(offerValue)
         return offerValueAsCurrency
 
@@ -17,9 +19,8 @@ class QualifyingOfferController:
         for record in self.records:
             if not record.isValid():
                 print("Player: "+record.playerName+"is invalid")
-                print("Data set size is {}", len(self.records))
                 self.records.remove(record)
-                print("Data set size is {} after removal", len(self.records))
+
 
 
     def averageTop125Salaries(self):
